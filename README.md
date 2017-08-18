@@ -18,6 +18,8 @@ You can:
 * change the position
 * add filters
 
+For more information, please check the API:
+https://dooxe.github.io/jecho/index.html
 
 # Filtering
 ```javascript
