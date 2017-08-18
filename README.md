@@ -1,7 +1,24 @@
-jecho
+# jecho
 ---
 
-# Create a sound
+jecho is a simple javascript audio library
+
+* Project website : https://dooxe.github.io/jecho/index.html
+* API documentation : https://dooxe.github.io/jecho/index.html
+
+## Get started
+
+1. [Download](https://github.com/dooxe/jecho/archive/master.zip) the latest
+version of `jecho`
+2. Create a webpage and include `jecho` inside:
+```html
+<head>
+	<script src="path/to/libs/jecho/dist/jecho.min.js"></script>
+</head>
+```
+3. Have fun with audio :)
+
+## Create a sound
 ```javascript
 var audio = jecho.Audio.load('my/file').then(function()
 {
@@ -9,19 +26,20 @@ var audio = jecho.Audio.load('my/file').then(function()
 });
 ```
 
-# What can I do with this audio ?
-You can:
+## What can I do with this audio ?
+
 * change the pitch
 * change the volume
 * change the pan
 * make it loop
 * change the position
 * add filters
+* ... may be more ! 
 
 For more information, please check the API:
 https://dooxe.github.io/jecho/index.html
 
-# Filtering
+## Filtering
 ```javascript
 var audio = new jecho.Audio();
 audio.addFilter(jecho.AudioFilter.create(
