@@ -67,6 +67,9 @@ gulp.task('makedoc', ()=>{
         sh.echo('Error: yuidoc failed');
         sh.exit(1);
     }
+    gulp.src(['dist/jecho.min.js'])
+        .pipe(gulp.dest('docs/assets/js'))
+    ;
     return gulp.src(['docs/assets/images/logo.png'])
         .pipe(gulp.dest('docs/api/assets/'))
     ;
