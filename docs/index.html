@@ -57,6 +57,7 @@
             var audio = new jecho.Audio(null,jecho.drivers.UNBUFFERED);
             audio.loop = true;
 
+            /*
             //audio.addFilter(jecho.filters.LowPass(0.01));
             var alpha = 0.1;
             var depth = 200;
@@ -75,6 +76,7 @@
                 }
                 return out;
             }));
+            */
 
             //
             audio.load('assets/audio/hiphop.mp3').then((audio)=>{
