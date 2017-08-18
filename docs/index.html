@@ -19,7 +19,13 @@
                     </h2>
                     <div id="spectrum">
                         <canvas id="spectrum-canvas" width="600" height="64"></canvas>
-                        <div class="loading-label">... loading ...</div>
+                        <div>
+                            <div class="loading-label">... loading ...</div>
+                            <a id="stop-button" data-playing href="#" onclick="stopSound(this)">
+                                <span class="pause">&#10074; &#10074;</span>
+                                <span class="play">&#9654;</span>
+                            </a>
+                        </div>
                     </div>
                     <div id="loadbar">
                         <div class="cursor"></div>
@@ -57,6 +63,18 @@
             var audio = new jecho.Audio(null,jecho.drivers.UNBUFFERED);
             audio.loop = true;
 
+            var stopSound = function(a)
+            {
+                if(audio.isPlaying){
+                    audio.pause();
+                    a.removeAttribute('data-playing');
+                }
+                else{
+                    audio.play();
+                    a.setAttribute('data-playing','');
+                }
+            };
+
             /*
             //audio.addFilter(jecho.filters.LowPass(0.01));
             var alpha = 0.1;
@@ -83,6 +101,7 @@
                 audio.fftSize = Math.pow(2,6);
                 audio.play();
                 document.querySelector('#spectrum .loading-label').style.opacity = 0;
+                document.querySelector('#stop-button').style.opacity = 1;
             });
 
             //

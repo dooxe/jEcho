@@ -3,8 +3,8 @@
 
 jecho is a simple javascript audio library
 
-* Project website : https://dooxe.github.io/jecho/index.html
-* API documentation : https://dooxe.github.io/jecho/index.html
+* Project website: https://dooxe.github.io/jecho/index.html
+* API documentation: https://dooxe.github.io/jecho/api/index.html
 
 ## Get started
 
@@ -34,7 +34,7 @@ var audio = jecho.Audio.load('my/file').then(function()
 * make it loop
 * change the position
 * add filters
-* ... may be more ! 
+* ... may be more !
 
 For more information, please check the API:
 https://dooxe.github.io/jecho/index.html
