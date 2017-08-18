@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "rootDir"           : "src",
+        "target"            : "ES5",
+        "module"            : "es6",
+        "outDir"            : "build",
+        "alwaysStrict"      : true,
+        "types"             : [
+            "node",
+            "es6-promise",
+            "Promise"
+        ]
+    },
+    "files" : [
+        "src/jecho.ts"
+    ]
+}

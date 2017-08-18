@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>jecho, go faster than sound for sound</title>
+        <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Ubuntu+Mono" rel="stylesheet">
+        <script src="../build/jecho.js"></script>
+        <link rel="stylesheet" href="node_modules/google-code-prettify/bin/prettify.min.css"/>
+        <link rel="stylesheet" href="prettyprint.css"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <script src="node_modules/google-code-prettify/bin/run_prettify.min.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <div class="brand">
+                <div>
+                    <img width="128" src="assets/images/logo.png"/>
+                    <h1 style="margin-bottom:0">jecho</h1>
+                    <h2 style="font-size:1.2em">
+                        go faster than sound for sound
+                    </h2>
+                    <div id="spectrum">
+                        <canvas id="spectrum-canvas" width="600" height="64"></canvas>
+                        <div class="loading-label">... loading ...</div>
+                    </div>
+                    <div id="loadbar">
+                        <div class="cursor"></div>
+                    </div>
+                </div>
+                <div style="margin-top:20px;margin-bottom:20px">
+                    <a class="button download float-left" href="https://github.com/dooxe/jecho/archive/master.zip">
+                        <svg style="vertical-align:top" width="24" height="24" class="octicon octicon-cloud-download" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" fill="#DDDDDD" d="M9 12h2l-3 3-3-3h2V7h2v5zm3-8c0-.44-.91-3-4.5-3C5.08 1 3 2.92 3 5 1.02 5 0 6.52 0 8c0 1.53 1 3 3 3h3V9.7H3C1.38 9.7 1.3 8.28 1.3 8c0-.17.05-1.7 1.7-1.7h1.3V5c0-1.39 1.56-2.7 3.2-2.7 2.55 0 3.13 1.55 3.2 1.8v1.2H12c.81 0 2.7.22 2.7 2.2 0 2.09-2.25 2.2-2.7 2.2h-2V11h2c2.08 0 4-1.16 4-3.5C16 5.06 14.08 4 12 4z"></path></svg>
+                        Download
+                    </a>
+                    <span class="spacer float-left">&nbsp;</span>
+                    <a class="button float-left" target="_blank" href="https://github.com/dooxe/jecho/">
+                        <svg style="vertical-align:top" width="24" height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill="white" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                        GitHub
+                    </a>
+                    <span class="spacer float-left">&nbsp;</span>
+                    <a class="button api float-left" target="_blank"  href="api/index.html">
+                        <svg style="vertical-align:top" width="24" height="24" class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill="white" fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
+                        API doc
+                    </a>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="credit">
+                    <a href="http://dooxe-creative">dooxe-creative</a> &copy; 2017
+                </div>
+            </div>
+        </div>
+        <script>
+            var sCanvas      = document.getElementById('spectrum-canvas');
+            var sContext     = sCanvas.getContext('2d');
+
+            //
+            //
+            //
+            var audio = new jecho.Audio(null,jecho.drivers.UNBUFFERED);
+            audio.loop = true;
+
+            //audio.addFilter(jecho.filters.LowPass(0.01));
+            var alpha = 0.1;
+            var depth = 200;
+            audio.addFilter(jecho.AudioFilter.createZ((x,y,i)=>{
+                var out = 0.6*x[i];
+                var N = 4;
+                var M = 800;
+                if(i > N*M)
+                {
+                    var w = 0.4;
+                    for(var j = 0; j < N; ++j)
+                    {
+                        out += w*x[i-(j+1)*M];
+                        w /= 1.8;
+                    }
+                }
+                return out;
+            }));
+
+            //
+            audio.load('assets/audio/hiphop.mp3').then((audio)=>{
+                audio.fftSize = Math.pow(2,6);
+                audio.play();
+                document.querySelector('#spectrum .loading-label').style.opacity = 0;
+            });
+
+            //
+            setInterval(function()
+            {
+                var w = sCanvas.width;
+                var h = sCanvas.height;
+                sContext.clearRect(0,0,w,h);
+                sContext.fillStyle = 'rgba(50,150,255,0.9)';
+                sContext.strokeStyle = '#111111';
+                sContext.lineWidth = 3;
+                var s = audio.spectrum;
+                var bandW = Math.max(1,w/(2*s.length));
+
+                for(var i = 0; i < s.length; ++i)
+                {
+                    var d = s[i]/255;
+                    var r = 25;
+                    var g = 50+(d*50);
+                    var b = 50+(d*155);
+                    sContext.fillStyle = 'rgb('+r+','+g+','+b+')';
+                    var bandH = d*h;
+                    var x = (s.length+i) * bandW;
+                    var y = h - bandH;
+                    sContext.beginPath();
+                    sContext.rect(x,y,bandW,bandH);
+                    sContext.fill();
+                    sContext.stroke();
+                    x = (s.length-1-i) * bandW;
+                    y = h - bandH;
+                    sContext.beginPath();
+                    sContext.rect(x,y,bandW,bandH);
+                    sContext.fill();
+                    sContext.stroke();
+                }
+            },10);
+
+            var loadbar = document.getElementById('loadbar');
+            var cursor  = loadbar.getElementsByClassName('cursor')[0];
+            audio.on(jecho.events.LOAD_PROGRESS,function(p)
+            {
+                cursor.style.width = Math.floor(100*p)+"%";
+            });
+        </script>
+    </body>
+</html>

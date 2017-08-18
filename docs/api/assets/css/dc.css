@@ -1,0 +1,225 @@
+html{
+    color                   : #555555   !important;
+}
+
+body
+{
+    font-size               : 1em;
+}
+
+.apis,
+.apidocs .index h3,
+.apidocs .index-list,
+.yui3-skin-sam .yui3-tab-label,
+/*code, kbd, pre, samp,*/
+.apidocs .item .type, .apidocs .returns-inline
+{
+    font-size               : inherit           !important;
+}
+
+.apidocs .item .type, .apidocs .returns-inline
+{
+    font-weight             : bold;
+    color                   : #698a67           !important;
+}
+
+body,
+h1, h2, h3, h4, h5, h6
+{
+    font-family             : 'Didact Gothic'   !important;
+}
+
+h1, h2, h3, h4
+{
+    color                   : #55729b   !important;
+}
+
+h2.off-left,
+.constructor h2
+{
+    background-color        : #55729b   !important;
+    color                   : #DDDDDD   !important;
+    padding                 : 10px;
+    margin-bottom           : 0         !important;
+}
+
+/** The box ith the class description */
+.apidocs .intro
+{
+    background              : none              !important;
+    border-style            : none              !important;
+    padding-left            : 0                 !important;
+}
+
+/**-------------------------------------------------------------
+#   FLAGS
+--------------------------------------------------------------*/
+.apidocs .flag
+{
+    padding                 : 2px               !important;
+    padding-left            : 4px               !important;
+    padding-right           : 4px               !important;
+}
+
+.apidocs .flag.chainable
+{
+    background              : #698a67           !important;
+}
+.apidocs .flag.static
+{
+    background              : #b69b79           !important;
+}
+/**-------------------------------------------------------------
+#   HEADER
+--------------------------------------------------------------*/
+#hd
+{
+    background-color        : #ededed   !important;
+    background-image        : none      !important;
+    border-style            : none      !important;
+}
+
+/**-------------------------------------------------------------
+#
+--------------------------------------------------------------*/
+.yui3-skin-sam .yui3-tab-label
+{
+    color                   : inherit   !important;
+    background              : #d8d8d8   !important;
+    border-style            : none      !important;
+}
+
+.yui3-skin-sam .yui3-tab-selected .yui3-tab-label, .yui3-skin-sam .yui3-tab-selected .yui3-tab-label:focus, .yui3-skin-sam .yui3-tab-selected .yui3-tab-label:hover
+{
+    color                   : #DDDDDD   !important;
+    border-style            : none      !important;
+    background              : #55729b   !important;
+    /*background          : none !important;*/
+}
+
+.apis a:hover, .apis a:focus
+{
+    background-color        : #55729b   !important;
+    background-image        : none      !important;
+    border-style            : none      !important;
+    text-shadow             : none      !important;
+    color                   : #DDDDDD   !important;
+}
+
+.yui3-skin-sam .yui3-tabview-list
+{
+    border-color            : #55729b   !important;
+}
+
+.apis
+{
+    padding                 : 0       !important;
+}
+
+.apidocs .item
+{
+    padding-bottom          : 1em       !important;
+    margin-bottom           : 0        !important;
+}
+
+/** Removes the top padding of the properties description */
+.apidocs .item pre.code
+{
+    margin-top              : 0         !important;
+}
+
+td
+{
+    background              : #F0F0F0   !important
+}
+
+.returns-description
+{
+    padding-left            : 15px      !important;
+}
+
+.apis a
+{
+    border                  : none      !important;
+    margin-left             : 0         !important;
+}
+
+.apis a:hover, .apis a:focus
+{
+    color                   : #356de4       !important;
+    background-color        : transparent   !important;
+    border-radius           : 0             !important;
+    text-decoration         : underline     !important;
+}
+
+.method
+{
+    border-style            : solid;
+    border-color            : #CCCCCC   !important;
+    border-width            : 1px;
+}
+
+.method .header
+{
+    background-color        : #E5E5E5;
+}
+
+.method .header,
+.method .body
+{
+    padding                 : 5px;
+}
+
+
+.arg
+{
+    color                   : #9558fb !important;
+}
+
+.arg code, .arg kbd, .arg samp, .arg code
+{
+    background-color       : transparent        !important;
+    border                  : none;
+}
+
+td.modifiers
+{
+    width                   : 240px;
+}
+
+.returns-inline
+{
+    margin-right            : 10px              !important;
+}
+
+/**/
+.apidocs .item .description p, .apidocs .item pre.code
+{
+    margin-top              : 0                 !important;
+}
+
+.method .apidocs .item .description p,
+.method .apidocs .item pre.code
+{
+    margin-top              : 1em               !important;
+}
+/**----------------------------------------------------------
+#   PRETTYPRINT THEME
+-----------------------------------------------------------*/
+code, kbd, pre, samp
+{
+    font-family             : 'Andale Mono','Fira Mono'       !important;
+}
+pre.code
+{
+    background              : #ECEAE1;
+    border-color            : #A1A3B7;
+}
+pre.code .com
+{
+    color                   : #397d3e;
+}
+pre.code .kwd
+{
+    font-weight             : bold;
+}

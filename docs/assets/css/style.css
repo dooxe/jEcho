@@ -1,0 +1,104 @@
+body
+{
+    font-family         : 'Fugaz One';
+    background-color    : #111111;
+    color               : #DDDDDD;
+}
+#main
+{
+    position            : absolute;
+    left                : 0;
+    top                 : 0;
+    right               : 0;
+    bottom              : 0;
+    display             : flex;
+    align-items         : center;
+    justify-content     : center;
+}
+
+a
+{
+    color               : white;
+    text-decoration     : none;
+}
+
+.brand
+{
+    display             : inline-block;
+    width               : 600px;
+    text-align          : center;
+}
+
+.button
+{
+    background-color    : #295077;
+    display             : inline-block;
+    width               : 192px;
+    padding             : 10px;
+    font-size           : 1.2em;
+    transition          : background-color 0.25s;
+    box-sizing          : border-box;
+}
+.button:hover
+{
+    background-color    : #31679e;
+}
+.button.download
+{
+    font-weight         : bold;
+    background-color    : #169b42;
+}
+.button.download:hover
+{
+    background-color    : #42ba6a;
+}
+.button.api
+{
+    background-color    : #4b3866;
+}
+.button.api:hover
+{
+    background-color    : #674c8f;
+}
+.spacer
+{
+    display             : block;
+    width               : 12px;
+}
+.float-left
+{
+    float                : left;
+}
+
+#loadbar
+{
+    height              : 4px;
+}
+#loadbar .cursor
+{
+    width               : 0;
+    height              : 100%;
+    background-color    : #295077;
+    margin              : auto;
+}
+#spectrum
+{
+    width               : 600px;
+    height              : 64px;
+    display             : flex;
+    align-items         : center;
+    justify-content     : center;
+    position            : relative;
+}
+#spectrum canvas
+{
+    position            : absolute;
+    left                : 0;
+    top                 : 0;
+    right               : 0;
+    bottom              : 0;
+}
+#spectrum .loading-label
+{
+    transition          : opacity 1s;
+}

@@ -1,0 +1,534 @@
+{
+    "project": {
+        "name": "jecho",
+        "description": "An easy-to-use js audio library",
+        "version": "0.0.1",
+        "url": "https://github.com/dooxe/jecho",
+        "logo": "assets/logo.png"
+    },
+    "files": {
+        "build\\jecho.js": {
+            "name": "build\\jecho.js",
+            "modules": {
+                "jecho": 1
+            },
+            "classes": {
+                "jecho": 1,
+                "jecho.AudioFilter": 1,
+                "jecho.Audio": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "jecho": {
+            "name": "jecho",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "jecho": 1,
+                "jecho.AudioFilter": 1,
+                "jecho.Audio": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "build\\jecho.js",
+            "line": 736
+        }
+    },
+    "classes": {
+        "jecho": {
+            "name": "jecho",
+            "shortname": "jecho",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "jecho",
+            "namespace": "",
+            "file": "build\\jecho.js",
+            "line": 43,
+            "description": "The main library module."
+        },
+        "jecho.AudioFilter": {
+            "name": "jecho.AudioFilter",
+            "shortname": "jecho.AudioFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "jecho",
+            "namespace": "",
+            "file": "build\\jecho.js",
+            "line": 175,
+            "description": "Base class of all the audio filters."
+        },
+        "jecho.Audio": {
+            "name": "jecho.Audio",
+            "shortname": "jecho.Audio",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "jecho",
+            "namespace": "",
+            "file": "build\\jecho.js",
+            "line": 736,
+            "description": "The base class of all audio types",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "driver",
+                    "description": "The driver to use for manipulating audio\n<ul>\n\t<li>jecho.drivers.BUFFERED <b>[ default ]</b></li>\n\t<li>jecho.drivers.UNBUFFERED</li>\n</ul>",
+                    "type": "String"
+                }
+            ]
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "build\\jecho.js",
+            "line": 53,
+            "description": "The vailable drivers for the audio management.",
+            "itemtype": "property",
+            "name": "drivers",
+            "type": "Object",
+            "class": "jecho",
+            "module": "jecho",
+            "subprops": [
+                {
+                    "name": "UNBUFFERED",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "BUFFERED",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 64,
+            "description": "Contains all the event types that can be fired in `jecho`.",
+            "itemtype": "property",
+            "name": "events",
+            "type": "Object",
+            "class": "jecho",
+            "module": "jecho",
+            "subprops": [
+                {
+                    "name": "LOAD",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "LOAD_PROGRESS",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "PAN_CHANGED",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "PITCH_CHANGED",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "VOLUME_CHANGED",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "POSITION_CHANGED",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "DURATION_AVAILABLE",
+                    "description": "",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 85,
+            "description": "Load an audio file",
+            "static": 1,
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "The audio source filename / URL",
+                    "type": "String"
+                }
+            ],
+            "class": "jecho",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 95,
+            "description": "Convert the given number of seconds into a readable\ntime format.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "formatTime",
+            "params": [
+                {
+                    "name": "seconds",
+                    "description": "",
+                    "type": "Integer"
+                },
+                {
+                    "name": "format",
+                    "description": "The format to use\n<ul>\n\t<li>`h` will be replaced by the number of hours\n\t<li>`m` will be replaced by the number of minutes\n\t<li>`s` will be replaced by the number of seconds\n</ul>\nDefault is `'m:s'`.",
+                    "type": "String"
+                }
+            ],
+            "example": [
+                "\n\tvar time = 4*60*60 + 25*60 + 11;\n\tvar timeStr = jecho.formatTime(time,'h:m:s');\n\tconsole.log(timeStr);\n\t// \"04:25:11\""
+            ],
+            "return": {
+                "description": "A string representation of the time",
+                "type": "String"
+            },
+            "class": "jecho",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 182,
+            "description": "<b>[ absract ]</b> Filter an audio buffer.",
+            "itemtype": "method",
+            "name": "filter",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "The channel number",
+                    "type": "Integer"
+                },
+                {
+                    "name": "input",
+                    "description": "The input data buffer",
+                    "type": "Array"
+                },
+                {
+                    "name": "output",
+                    "description": "The output data buffer",
+                    "type": "Array"
+                },
+                {
+                    "name": "length",
+                    "description": "The length of the buffers",
+                    "type": "Integer"
+                }
+            ],
+            "class": "jecho.AudioFilter",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 191,
+            "description": "Create a new filter with Z transform expressions",
+            "static": 1,
+            "itemtype": "method",
+            "name": "createZ",
+            "params": [
+                {
+                    "name": "zFilterFunction",
+                    "description": "The `zFilterFunction` prototype is the following:\n<br/>\n`function(x,y,i){}` with\n<ul>\n\t<li>`x` the input buffer</li>\n\t<li>`y` the output buffer</li>\n\t<li>`i` the current output index</li>\n</ul>",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "The newly created filter",
+                "type": "jecho.AudioFilter"
+            },
+            "example": [
+                "\n\t// This filter decreases the output volume\n\t// by a factor of two.\n\taudio.addFilter(jecho.createZFilter(function(x,y,i)\n\t{\n\t\tvar outSample = x[i];\n\t\toutSample *= 0.5;\n\t\treturn outSample;\n\t}));"
+            ],
+            "class": "jecho.AudioFilter",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 231,
+            "description": "Create a new filter from a filter function.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "createFilter",
+            "params": [
+                {
+                    "name": "filterFunction",
+                    "description": "Function that will filter the\naudio data buffer. Its prototype is the following:\n`function(channel,input,output,length){}`.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "jecho.AudioFilter"
+            },
+            "class": "jecho.AudioFilter",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 248,
+            "description": "Create a low pass filter.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "createLowPass",
+            "params": [
+                {
+                    "name": "alpha",
+                    "description": "The cutoff frequency between 0 and 2",
+                    "type": "Float"
+                }
+            ],
+            "return": {
+                "description": "A low-pass filter",
+                "type": "jecho.AudioFilter"
+            },
+            "class": "jecho.AudioFilter",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 760,
+            "itemtype": "method",
+            "name": "on",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Event type",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback function",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Audio"
+            },
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 775,
+            "description": "Get / set the looping status",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "boolean",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 787,
+            "description": "Get / set the audio playing position from `0` to `1`.",
+            "itemtype": "property",
+            "name": "position",
+            "type": "float",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 802,
+            "description": "Get / set the sound pitch within `[0,~]`",
+            "itemtype": "property",
+            "name": "pitch",
+            "type": "float",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 820,
+            "description": "Get / set the sound panning between `-1` and `+1` where:\n<table>\n\t<tr><td style=\"width:32px\">`-1`</td><td>is fully on the left</td></tr>\n\t<tr><td>`0`</td><td>is on the center (default)</td></tr>\n\t<tr><td>`+1`</td><td>is fully on the right</td></tr>\n</table>",
+            "itemtype": "property",
+            "name": "pan",
+            "type": "float",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 843,
+            "description": "Get / set the sound volume between 0 and 1.",
+            "itemtype": "property",
+            "name": "volume",
+            "type": "float",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 864,
+            "description": "Get / set the size of the fft to use for both the `spectrum` and `waveform`.",
+            "itemtype": "property",
+            "name": "fftSize",
+            "type": "Integer",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 876,
+            "description": "The audio duration in seconds.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "float",
+            "readonly": "",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 889,
+            "description": "Is the audio currently playing ?",
+            "itemtype": "property",
+            "name": "isPlaying",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 901,
+            "description": "Load a sound from source filename",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "example": [
+                "\n\tvar audio = new jecho.Audio();\n\taudio.load('my/super/music').then(\n\t\t// on success\n\t\tfunction(audio){\n\t\t\taudio.pitch = 1.2;\n\t\t\taudio.play();\n\t\t},\n\t\t// on error\n\t\tfunction (error){\n\n\t\t}\n\t);"
+            ],
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 924,
+            "description": "Load an audio file.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "load",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 933,
+            "description": "Play the audio",
+            "itemtype": "method",
+            "name": "play",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 943,
+            "description": "Stop the sound and save the position",
+            "itemtype": "method",
+            "name": "pause",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 952,
+            "description": "Stop the sound and reset the position",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 960,
+            "description": "Get the current sound spectrum",
+            "itemtype": "property",
+            "name": "spectrum",
+            "type": "Array",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 972,
+            "description": "Get the signal waveform",
+            "itemtype": "property",
+            "name": "waveform",
+            "type": "Array",
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 983,
+            "description": "Add a filter to make some effects on the sound",
+            "itemtype": "method",
+            "name": "addFilter",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "The filter to add to the list",
+                    "type": "jecho.AudioFilter"
+                }
+            ],
+            "chainable": 1,
+            "class": "jecho.Audio",
+            "module": "jecho"
+        },
+        {
+            "file": "build\\jecho.js",
+            "line": 993,
+            "description": "Remove an audio filter",
+            "itemtype": "method",
+            "name": "removeFilter",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "The filter to be removed",
+                    "type": "jecho.AudioFilter"
+                }
+            ],
+            "chainable": 1,
+            "class": "jecho.Audio",
+            "module": "jecho"
+        }
+    ],
+    "warnings": []
+}

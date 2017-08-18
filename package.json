@@ -1,0 +1,50 @@
+{
+  "name": "jecho",
+  "description": "A simple javascript audio library",
+  "version": "0.0.1",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dooxe/jecho.git"
+  },
+  "keywords": [
+    "javascript",
+    "audio",
+    "sound"
+  ],
+  "author": "dooxe (Maxime Daisy)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dooxe/jecho/issues"
+  },
+  "homepage": "https://github.com/dooxe/jecho#readme",
+  "devDependencies": {
+      "@types/es6-promise": "0.0.32",
+      "@types/node": "^8.0.19",
+      "es6-promise": "^4.1.1",
+      "google-code-prettify": "^1.0.5",
+      "gulp": "^3.9.1",
+      "gulp-concat": "^2.6.1",
+      "gulp-copy": "^1.0.0",
+      "gulp-rename": "^1.2.2",
+      "gulp-sequence": "^0.4.6",
+      "gulp-typescript": "^3.2.1",
+      "gulp-uglify": "^3.0.0",
+      "gulp-watch": "^4.3.11",
+      "run-sequence": "^2.1.0",
+      "shelljs": "^0.7.8",
+      "typescript": "^2.4.2",
+      "yuidoc-bootstrap-theme": "^1.0.6",
+      "yuidocjs": "^0.10.2"
+    },
+    "dependencies": {
+      "google-code-prettify": "^1.0.5"
+    }
+}
