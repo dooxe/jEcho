@@ -180,7 +180,7 @@ namespace jecho
 
 	/**
 	*	Base class of all the audio filters.
-	*	@class jecho.AudioFilter
+	*	@class AudioFilter
 	*/
 	export abstract class AudioFilter
 	{
@@ -937,8 +937,8 @@ namespace jecho
 
         /**
         *	The base class of all audio types
-        *	@class jecho.Audio
-		*	@constructor jecho.Audio
+        *	@class Audio
+		*	@constructor Audio
 		*	@param {String} driver The driver to use for manipulating audio
 		*	<ul>
 		*		<li>jecho.drivers.BUFFERED <b>[ default ]</b></li>
@@ -1190,7 +1190,7 @@ namespace jecho
 		/**
 		*	Add a filter to make some effects on the sound
 		*	@method addFilter
-		*	@param {jecho.AudioFilter} filter The filter to add to the list
+		*	@param {AudioFilter} filter The filter to add to the list
 		*	@chainable
 		*/
 		public addFilter(filter):Audio

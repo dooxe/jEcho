@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>jecho.AudioFilter - jecho</title>
+        <title>AudioFilter - jecho</title>
         <link rel="stylesheet" href="https://yui-s.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
         <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
         <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,26 +26,45 @@
                 </div>
             </div>
             <div id="bd" class="yui3-g">
-                <div class="yui3-u-1-5">
+                <div class="yui3-u-1-4">
                     <div id="docs-sidebar" class="sidebar apidocs">
                         <div id="api-list">
-                        
                             <!--
                             <h2 class="off-left">APIs</h2>
                             -->
-                            <h2 class="off-left">Classes</h2>
+                            <h2 class="off-left">Modules</h2>
+                            <div id="module-list-panel">
+                                <ul id="api-modules" class="apis modules">
+                                    <li><a href="../modules/jecho.html">jecho</a></li>
+                                </ul>
+                            </div>
                         
-                            <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/jecho.html">jecho</a></li>
-                                <li><a href="../classes/jecho.Audio.html">jecho.Audio</a></li>
-                                <li><a href="../classes/jecho.AudioFilter.html">jecho.AudioFilter</a></li>
-                            </ul>
+                            <h2 class="off-left">Classes</h2>
+                            <div id="class-list-panel">
+                                <ul id="api-classes" class="apis classes">
+                                    <li>
+                                        <a href="../classes/Audio.html">
+                                            jecho.Audio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../classes/AudioFilter.html">
+                                            jecho.AudioFilter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../classes/jecho.html">
+                                            jecho.jecho
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         
                         
                         </div>
                     </div>
                 </div>
-                <div class="yui3-u-4-5">
+                <div class="yui3-u-3-4">
                     <!--
                     <div id="api-options">
                         Show:
@@ -73,7 +92,10 @@
                     <div class="apidocs">
                         <div id="docs-main">
                             <div class="content">
-<h1>jecho.AudioFilter Class</h1>
+<div class="module-name">
+    <b>Module</b> <a href="../modules/jecho.html">jecho</a>
+</div>
+<h1>Class <span class="item-name">AudioFilter</span></h1>
 
 
 <div class="box intro">
@@ -94,7 +116,7 @@
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
     </td>
@@ -103,7 +125,8 @@
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>filterFunction</code>
+                            <code class="name">filterFunction</code>:
+                            <code class="type">Function</code>
                     </li>
                 </ul><span class="paren">)</span>
             </div>
@@ -126,7 +149,7 @@
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
     </td>
@@ -135,7 +158,8 @@
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>alpha</code>
+                            <code class="name">alpha</code>:
+                            <code class="type">Float</code>
                     </li>
                 </ul><span class="paren">)</span>
             </div>
@@ -158,7 +182,7 @@
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
     </td>
@@ -167,7 +191,8 @@
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>zFilterFunction</code>
+                            <code class="name">zFilterFunction</code>:
+                            <code class="type">Function</code>
                     </li>
                 </ul><span class="paren">)</span>
             </div>
@@ -198,16 +223,20 @@
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>channel</code>
+                            <code class="name">channel</code>:
+                            <code class="type">Integer</code>
                     </li>
                     <li class="arg">
-                            <code>input</code>
+                            <code class="name">input</code>:
+                            <code class="type">Array</code>
                     </li>
                     <li class="arg">
-                            <code>output</code>
+                            <code class="name">output</code>:
+                            <code class="type">Array</code>
                     </li>
                     <li class="arg">
-                            <code>length</code>
+                            <code class="name">length</code>:
+                            <code class="type">Integer</code>
                     </li>
                 </ul><span class="paren">)</span>
             </div>
@@ -237,16 +266,17 @@
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
         <h3 class="name"><code>createFilter</code></h3>
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>filterFunction</code>
+                            <code class="name">filterFunction</code>:
+                            <code class="type">Function</code>
                     </li>
-                </ul><span class="paren">)</span>
+            </ul><span class="paren">)</span>
             </div>
 
 
@@ -291,7 +321,7 @@ audio data buffer. Its prototype is the following:
             <div class="returns">
                 <h4>Returns</h4>
                 <div class="returns-description">
-                            <span class="type"><a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a></span>:
+                            <span class="type">jecho.AudioFilter</span>:
                 </div>
             </div>
 
@@ -303,16 +333,17 @@ audio data buffer. Its prototype is the following:
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
         <h3 class="name"><code>createLowPass</code></h3>
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>alpha</code>
+                            <code class="name">alpha</code>:
+                            <code class="type">Float</code>
                     </li>
-                </ul><span class="paren">)</span>
+            </ul><span class="paren">)</span>
             </div>
 
 
@@ -368,16 +399,17 @@ audio data buffer. Its prototype is the following:
             <span class="flag static">static</span>
         <span class="returns-inline">
             <span class="type">
-                    <a href="../classes/jecho.AudioFilter.html" class="crosslink">jecho.AudioFilter</a>
+                    jecho.AudioFilter
             </span>
         </span>
         <h3 class="name"><code>createZ</code></h3>
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>zFilterFunction</code>
+                            <code class="name">zFilterFunction</code>:
+                            <code class="type">Function</code>
                     </li>
-                </ul><span class="paren">)</span>
+            </ul><span class="paren">)</span>
             </div>
 
 
@@ -460,18 +492,22 @@ audio.addFilter(jecho.createZFilter(function(x,y,i)
             <div class="args">
                 <span class="paren">(</span><ul class="args-list inline commas">
                     <li class="arg">
-                            <code>channel</code>
+                            <code class="name">channel</code>:
+                            <code class="type">Integer</code>
                     </li>
                     <li class="arg">
-                            <code>input</code>
+                            <code class="name">input</code>:
+                            <code class="type">Array</code>
                     </li>
                     <li class="arg">
-                            <code>output</code>
+                            <code class="name">output</code>:
+                            <code class="type">Array</code>
                     </li>
                     <li class="arg">
-                            <code>length</code>
+                            <code class="name">length</code>:
+                            <code class="type">Integer</code>
                     </li>
-                </ul><span class="paren">)</span>
+            </ul><span class="paren">)</span>
             </div>
 
 

@@ -174,7 +174,7 @@ var jecho;
     }());
     /**
     *	Base class of all the audio filters.
-    *	@class jecho.AudioFilter
+    *	@class AudioFilter
     */
     var AudioFilter = (function () {
         function AudioFilter() {
@@ -735,8 +735,8 @@ var jecho;
     var Audio = (function () {
         /**
         *	The base class of all audio types
-        *	@class jecho.Audio
-        *	@constructor jecho.Audio
+        *	@class Audio
+        *	@constructor Audio
         *	@param {String} driver The driver to use for manipulating audio
         *	<ul>
         *		<li>jecho.drivers.BUFFERED <b>[ default ]</b></li>
@@ -983,7 +983,7 @@ var jecho;
         /**
         *	Add a filter to make some effects on the sound
         *	@method addFilter
-        *	@param {jecho.AudioFilter} filter The filter to add to the list
+        *	@param {AudioFilter} filter The filter to add to the list
         *	@chainable
         */
         Audio.prototype.addFilter = function (filter) {

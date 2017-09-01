@@ -14,8 +14,8 @@
             },
             "classes": {
                 "jecho": 1,
-                "jecho.AudioFilter": 1,
-                "jecho.Audio": 1
+                "AudioFilter": 1,
+                "Audio": 1
             },
             "fors": {},
             "namespaces": {}
@@ -28,8 +28,8 @@
             "elements": {},
             "classes": {
                 "jecho": 1,
-                "jecho.AudioFilter": 1,
-                "jecho.Audio": 1
+                "AudioFilter": 1,
+                "Audio": 1
             },
             "fors": {},
             "namespaces": {},
@@ -53,9 +53,9 @@
             "line": 43,
             "description": "The main library module."
         },
-        "jecho.AudioFilter": {
-            "name": "jecho.AudioFilter",
-            "shortname": "jecho.AudioFilter",
+        "AudioFilter": {
+            "name": "AudioFilter",
+            "shortname": "AudioFilter",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -67,9 +67,9 @@
             "line": 175,
             "description": "Base class of all the audio filters."
         },
-        "jecho.Audio": {
-            "name": "jecho.Audio",
-            "shortname": "jecho.Audio",
+        "Audio": {
+            "name": "Audio",
+            "shortname": "Audio",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -235,7 +235,7 @@
                     "type": "Integer"
                 }
             ],
-            "class": "jecho.AudioFilter",
+            "class": "AudioFilter",
             "module": "jecho"
         },
         {
@@ -259,7 +259,7 @@
             "example": [
                 "\n\t// This filter decreases the output volume\n\t// by a factor of two.\n\taudio.addFilter(jecho.createZFilter(function(x,y,i)\n\t{\n\t\tvar outSample = x[i];\n\t\toutSample *= 0.5;\n\t\treturn outSample;\n\t}));"
             ],
-            "class": "jecho.AudioFilter",
+            "class": "AudioFilter",
             "module": "jecho"
         },
         {
@@ -280,7 +280,7 @@
                 "description": "",
                 "type": "jecho.AudioFilter"
             },
-            "class": "jecho.AudioFilter",
+            "class": "AudioFilter",
             "module": "jecho"
         },
         {
@@ -301,7 +301,7 @@
                 "description": "A low-pass filter",
                 "type": "jecho.AudioFilter"
             },
-            "class": "jecho.AudioFilter",
+            "class": "AudioFilter",
             "module": "jecho"
         },
         {
@@ -326,7 +326,7 @@
                 "description": "",
                 "type": "Audio"
             },
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -336,7 +336,7 @@
             "itemtype": "property",
             "name": "loop",
             "type": "boolean",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -346,7 +346,7 @@
             "itemtype": "property",
             "name": "position",
             "type": "float",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -356,7 +356,7 @@
             "itemtype": "property",
             "name": "pitch",
             "type": "float",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -366,7 +366,7 @@
             "itemtype": "property",
             "name": "pan",
             "type": "float",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -376,7 +376,7 @@
             "itemtype": "property",
             "name": "volume",
             "type": "float",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -386,7 +386,7 @@
             "itemtype": "property",
             "name": "fftSize",
             "type": "Integer",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -397,7 +397,7 @@
             "name": "duration",
             "type": "float",
             "readonly": "",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -408,7 +408,7 @@
             "name": "isPlaying",
             "type": "Boolean",
             "readonly": "",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -431,7 +431,7 @@
             "example": [
                 "\n\tvar audio = new jecho.Audio();\n\taudio.load('my/super/music').then(\n\t\t// on success\n\t\tfunction(audio){\n\t\t\taudio.pitch = 1.2;\n\t\t\taudio.play();\n\t\t},\n\t\t// on error\n\t\tfunction (error){\n\n\t\t}\n\t);"
             ],
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -445,7 +445,7 @@
                 "description": "",
                 "type": "Promise"
             },
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -454,7 +454,7 @@
             "description": "Play the audio",
             "itemtype": "method",
             "name": "play",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -463,7 +463,7 @@
             "description": "Stop the sound and save the position",
             "itemtype": "method",
             "name": "pause",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -472,7 +472,7 @@
             "description": "Stop the sound and reset the position",
             "itemtype": "method",
             "name": "stop",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -482,7 +482,7 @@
             "itemtype": "property",
             "name": "spectrum",
             "type": "Array",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -492,7 +492,7 @@
             "itemtype": "property",
             "name": "waveform",
             "type": "Array",
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -505,11 +505,11 @@
                 {
                     "name": "filter",
                     "description": "The filter to add to the list",
-                    "type": "jecho.AudioFilter"
+                    "type": "AudioFilter"
                 }
             ],
             "chainable": 1,
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         },
         {
@@ -526,7 +526,7 @@
                 }
             ],
             "chainable": 1,
-            "class": "jecho.Audio",
+            "class": "Audio",
             "module": "jecho"
         }
     ],

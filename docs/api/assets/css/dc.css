@@ -7,6 +7,11 @@ body
     font-size               : 1em;
 }
 
+ul
+{
+    list-style-type             : square;
+}
+
 .apis,
 .apidocs .index h3,
 .apidocs .index-list,
@@ -29,7 +34,8 @@ h1, h2, h3, h4, h5, h6
     font-family             : 'Didact Gothic'   !important;
 }
 
-h1, h2, h3, h4
+h1, h2, h3, h4,
+.module-name
 {
     color                   : #55729b   !important;
 }
@@ -38,7 +44,7 @@ h2.off-left,
 .constructor h2
 {
     background-color        : #55729b   !important;
-    color                   : #DDDDDD   !important;
+    color                   : #EEEEEE   !important;
     padding                 : 10px;
     margin-bottom           : 0         !important;
 }
@@ -69,6 +75,17 @@ h2.off-left,
 {
     background              : #b69b79           !important;
 }
+
+#api-list
+{
+    margin-top              : 0                 !important;
+}
+
+#api-list h2
+{
+    margin-top              : 0                 !important;
+}
+
 /**-------------------------------------------------------------
 #   HEADER
 --------------------------------------------------------------*/
@@ -152,7 +169,8 @@ td
     text-decoration         : underline     !important;
 }
 
-.method
+.method,
+.constructor
 {
     border-style            : solid;
     border-color            : #CCCCCC   !important;
@@ -203,6 +221,55 @@ td.modifiers
 {
     margin-top              : 1em               !important;
 }
+
+.constructor h2
+{
+    margin           : 0                 !important;
+}
+.constructor .method
+{
+    margin-top              : 0                 !important;
+}
+/**---------------------------------------------------------
+#
+----------------------------------------------------------*/
+#module-list-panel,
+#class-list-panel
+{
+    background-color        : #EEEEEE;
+    border-left-style       : solid;
+    border-right-style      : solid;
+    border-bottom-style     : solid;
+    border-width            : 1px;
+    border-color            : #BBBBBB;
+    overflow                : auto;
+    margin-bottom           : 20px;
+}
+
+#module-list-panel ul,
+#class-list-panel ul
+{
+    margin                 : 5px;
+}
+
+#module-list-panel
+{
+    max-height              : 150px;
+}
+
+#class-list-panel
+{
+    max-height              : 350px;
+}
+
+/**----------------------------------------------------------
+#   PRETTYPRINT THEME
+-----------------------------------------------------------*/
+.item-name
+{
+    color                   : #80AAD4;
+}
+
 /**----------------------------------------------------------
 #   PRETTYPRINT THEME
 -----------------------------------------------------------*/
